@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keyboard>
+
+<options>
+<!-- not yet implemented -->
+</options>
+
+<layout id="defualt keyboard">
+
+  <row> 
+    <key>
+	  <default display="X"/> 
+	  <shifted display="A" />               
+    </key>
+    <key>
+	  <default display="Y"/>
+	  <shifted display="B" />                
+    </key>
+    <key>
+	  <default display="Z"/> 
+	  <shifted display="C" />               
+    </key>
+    <space width="50"/>
+    <key>
+	  <default display="Shift" action="modifier:shift"/>                
+    </key>
+    <key>
+	  <default display="(" />               
+    </key>
+    <key>
+	  <default display=")" />               
+    </key>
+  </row>
+  <row>
+    <key>
+	  <default display="M"/> 
+	  <shifted display="D" />               
+    </key>
+    <key>
+	  <default display="S"/>
+	  <shifted display="H" />                
+    </key>
+    <key>
+	  <default display="T"/> 
+	  <shifted display="R" />               
+    </key>
+    <space width="50"/>
+
+    <key>
+	  <default display="1" /> 
+	  <shifted display='"' />               
+    </key>
+    <key>
+	  <default display="2" />
+	  <shifted display=";" />                
+    </key>
+    <key>
+	  <default display="3" />
+	  <shifted display=":" />
+    </key>
+
+  </row>
+  <row>
+    <key>
+	  <default display="I"/> 
+	  <shifted display="U" />               
+    </key>
+    <key>
+	  <default display="J"/>
+	  <shifted display="V" />                
+    </key>
+    <key>
+	  <default display="K"/> 
+	  <shifted display="W" />               
+    </key>
+    <space width="50"/>
+    
+    <key>
+	  <default display="4" />
+	  <shifted display="\" />
+    </key>
+    <key>
+	  <default display="5" />
+	  <shifted display="#" />
+    </key>
+    <key>
+	  <default display="6" />
+	  <shifted display="^" />
+    </key>
+  </row>
+  <row>
+    <key>
+	  <default display="G"/> 
+	  <shifted display="E" />               
+    </key>
+    <key>
+	  <default display="F"/>
+	  <shifted display="Q" />                
+    </key>
+    <key>
+	  <default display="P"/> 
+	  <shifted display="L" />               
+    </key>
+    <space width="50"/>
+    
+    <key>
+	  <default display="7" />
+	  <shifted display="[" />
+    </key>
+
+    <key>
+	  <default display="8" />
+	  <shifted display="]" />
+    </key>
+    <key>
+	  <default display="9" />
+	  <shifted display="*" />
+    </key>
+  </row>
+  <row>
+    <key>
+	  <default display="N"/> 
+	  <shifted display="O" />               
+    </key>
+    <key>
+	  <default display="%"/>
+	  <shifted display="," />                
+    </key>
+    <key>
+	  <default display="Space" action="space" />               
+    </key>
+    <space width="50"/>
+    <key>
+	  <default display="0" />
+	  <shifted display="/" />
+    </key>
+    <key>
+	  <default display="." />
+	  <shifted display="+" />
+    </key>
+    <key>
+	  <default display="-" />
+	  <shifted display="=" />
+    </key>
+    
+  </row>
+  <row>
+    <space width="1000"/>
+    <key>
+	  <default display= "&#8593;" action="up" />               
+    </key>
+
+    <space width="2400"/>
+    <key>
+	  <default display="PgUp" action="pageup"/>
+    </key>
+    <key>
+	  <default display="Alt" action="modifier:alt"/>
+    </key>
+    <key>
+	  <default display="Bksp" action="backspace"/>
+    </key>
+    
+  </row>
+    <row>
+    <key>
+	  <default display= "&#8592;" action="left" />               
+    </key>
+    <key>
+	  <default display= "&#8595;" action="down" />               
+    </key>
+    <key>
+	  <default display= "&#8594;" action="rigth" />               
+    </key>
+    <space width="50"/>
+    <key>
+	  <default display="PgDn" action="pagedown"/>
+    </key>
+    <key>
+	  <default display="Del" action="delete"/>
+    </key>
+    <key>
+	  <default display="Enter" action="return"/>
+    </key>
+    
+  </row>
+
+</layout>
+
+
+</keyboard>
