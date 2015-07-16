@@ -11,8 +11,8 @@
     nieson@web.de
     
     gmoccapy_lcd7 is a gmoccapy GUI modified to support a LCD 7" with 800X480 resolution
-	Modified by Leonardo Noguera 2015
-	
+    Modified by Leonardo Noguera 2015
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -86,8 +86,8 @@ if debug:
             pass
 
 # constants
-#          # gmoccapy  #"
-_RELEASE = "  1.4.0"
+#          # gmoccapy_lcd7  #"
+_RELEASE = "  1.0.0"
 _INCH = 0                           # imperial units are active
 _MM = 1                             # metric units are active
 _TEMPDIR = tempfile.gettempdir()    # Now we know where the tempdir is, usualy /tmp
@@ -220,8 +220,8 @@ class gmoccapy(object):
         self._init_user_messages()
 
         # set the title of the window, to show the release
-        self.widgets.window1.set_title("gmoccapy for linuxcnc %s" % _RELEASE)
-        self.widgets.lbl_version.set_label("<b>gmoccapy\n%s</b>" % _RELEASE)
+        self.widgets.window1.set_title("gmoccapy_lcd7 for Machinekit %s" % _RELEASE)
+        self.widgets.lbl_version.set_label("<b>gmoccapy\nlcd7 %s</b>" % _RELEASE)
 
         panel = gladevcp.makepins.GladePanel(self.halcomp, XMLNAME , self.builder, None)
 
