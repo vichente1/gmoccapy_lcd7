@@ -221,7 +221,7 @@ class gmoccapy(object):
 
         # set the title of the window, to show the release
         self.widgets.window1.set_title("gmoccapy_lcd7 for Machinekit %s" % _RELEASE)
-        self.widgets.lbl_version.set_label("<b>gmoccapy\nlcd7 %s</b>" % _RELEASE)
+        self.widgets.lbl_version.set_label("<b>gmoccapy\nlcd7%s</b>" % _RELEASE)
 
         panel = gladevcp.makepins.GladePanel(self.halcomp, XMLNAME , self.builder, None)
 
