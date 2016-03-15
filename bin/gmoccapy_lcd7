@@ -4084,7 +4084,7 @@ class gmoccapy(object):
                 self._add_alarm_entry("%s not_sensitive" % button)
                 return
             button_pressed_list = ("rbt_manual", "rbt_mdi", "rbt_auto")
-            button_toggled_list = ("tbtn_setup")
+            button_toggled_list = ("tbtn_setup","tbtn_info")
             if button in button_pressed_list:
                 self.widgets[button].set_active(True)
                 self.widgets[button].emit("pressed")
@@ -4106,7 +4106,7 @@ class gmoccapy(object):
             hal_glib.GPin(pin).connect("value_changed", self._on_h_button_changed)
 
         # generate the vertical button pins
-        for v_button in range(0, 7):
+        for v_button in range(0, 8):
             pin = self.halcomp.newpin("v-button-%s" % v_button, hal.HAL_BIT, hal.HAL_IN)
             hal_glib.GPin(pin).connect("value_changed", self._on_v_button_changed)
 
