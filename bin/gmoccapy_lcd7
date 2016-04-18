@@ -1106,6 +1106,10 @@ class gmoccapy(object):
                                        stdin = subprocess.PIPE,
                                        stdout = subprocess.PIPE,
                                        close_fds = True)
+                self.onboard_kb2 = subprocess.Popen(["matchbox-keyboard", "--xid","us"],
+                                       stdin = subprocess.PIPE,
+                                       stdout = subprocess.PIPE,
+                                       close_fds = True)
                 print (_("**** GMOCCAPY INFO ****"))
                 print (_("**** virtual keyboard program found : <matchbox-keyboard>"))
             else:
@@ -1114,11 +1118,15 @@ class gmoccapy(object):
                 self._no_virt_keyboard()
                 return
             sid = self.onboard_kb.stdout.readline()
+            sid2 = self.onboard_kb2.stdout.readline()
             socket = gtk.Socket()
             socket.show()
-            #self.widgets.key_box.add(socket)
+            socket2 = gtk.Socket()
+            socket2.show()
+            self.widgets.table_vbox2.add(socket2)
             self.widgets.table_vbox.add(socket)
             socket.add_id(long(sid))
+            socket2.add_id(long(sid2))
             self.onboard = True
         except Exception, e:
             print (_("**** GMOCCAPY ERROR ****"))
@@ -1328,17 +1336,18 @@ class gmoccapy(object):
             self.widgets.ntb_preview.set_current_page(2)
             self.widgets.tooledit1.set_selected_tool(self.stat.tool_in_spindle)
             if self.widgets.chk_use_kb_on_tooledit.get_active():
-                #self.widgets.ntb_info.set_current_page(1)
-                self.widgets.ntb_dro_vk.show()
-                self.widgets.ntb_dro_vk.set_current_page(1)
+                self.widgets.vbox11.set_size_request(-1, 150)
+                self.widgets.vbox11.show()
         else:
             page.hide()
             if self.widgets.ntb_preview.get_n_pages() > 4: # user tabs are availible
                 self.widgets.ntb_preview.set_property("show-tabs", not state)
             self.widgets.vbx_jog.show()
+            self.widgets.ntb_jog.show()
             self.widgets.ntb_preview.set_current_page(0)
-            #self.widgets.ntb_info.set_current_page(0)
+            self.widgets.vbox11.hide()
             self.widgets.ntb_dro_vk.set_current_page(0)
+
 
     def _show_iconview_tab(self, state):
         page = self.widgets.ntb_preview.get_nth_page(3)
@@ -1349,8 +1358,6 @@ class gmoccapy(object):
             self.widgets.ntb_preview.set_property("show-tabs", not state)
             self.widgets.ntb_preview.set_current_page(3)
             if self.widgets.chk_use_kb_on_file_selection.get_active():
-                #self.widgets.box_search.show()
-                #self.widgets.ntb_info.set_current_page(1)
                 self.widgets.ntb_dro_vk.show()
                 self.widgets.ntb_dro_vk.set_current_page(1)
         else:
@@ -1358,10 +1365,9 @@ class gmoccapy(object):
             if self.widgets.ntb_preview.get_n_pages() > 4: # user tabs are availible
                 self.widgets.ntb_preview.set_property("show-tabs", not state)
             self.widgets.ntb_preview.set_current_page(0)
-            #self.widgets.ntb_info.set_current_page(0)
             self.widgets.ntb_dro_vk.set_current_page(0)
 
-    # every 100 milli seconds this gets called
+    # every 200 milli seconds this gets called
     # check linuxcnc for status, error and then update the readout
     def _periodic(self):
         self.stat.poll()
@@ -3753,7 +3759,7 @@ class gmoccapy(object):
         self.widgets.ntb_dro_vk.hide()
         width = self.widgets.window1.allocation.width
         width -= self.widgets.vbtb_main.allocation.width
-        #width -= self.widgets.box_right.allocation.width
+        width -= self.widgets.box_right.allocation.width
         width -= self.widgets.box_left.allocation.width
         width -= 5
         self.widgets.vbx_jog.set_size_request(width , -1)
@@ -3768,7 +3774,7 @@ class gmoccapy(object):
             self.widgets.box_search.set_size_request(-1, 40)
             self.widgets.tbl_search.show()
             self.widgets.box_search.show()
-        self.gcodeerror = ""
+        self.gcodeerror = ''
 
 # Search and replace handling in edit mode
     # undo changes while in edit mode
